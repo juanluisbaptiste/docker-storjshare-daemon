@@ -1,0 +1,18 @@
+version: '2'
+services:
+  daemon:
+    image: juanluisbaptiste/storjshare-daemon:latest
+    container_name: storjshare-daemon
+    volumes_from:
+      - daemon-data
+    environment:
+      - STORJ_CONFIG_FILE="/config/config.json"
+  daemon-data:
+    image: juanluisbaptiste/storjshare-daemon:latest
+    container_name: daemon-data
+    volumes:
+      - ./volumes/rented:/rented
+      - ./volumes/config:/config
+      - ./volumes/log:/log
+      - /etc/localtime:/etc/localtime:ro
+    command: /bin/true
