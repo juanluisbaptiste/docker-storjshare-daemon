@@ -18,4 +18,4 @@ services:
       - ./volumes/config:/config
       - ./volumes/log:/log
       - /etc/localtime:/etc/localtime:ro
-    entrypoint: /bin/true
+    command: /bin/true
