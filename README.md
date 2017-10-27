@@ -12,7 +12,11 @@ Clone the repo and then use `docker-compose` to build the image:
 
 ## How to run the container
 
-First you need to create the daemon configuration file. For this you can invoke _storjshare create_ the following command:
+To start the container there's a docker-compose.yml file. You need to create the configuration first if you don't have it yet.
+
+### Create configuration file
+
+If you don't have a configuration file for the daemon you will need to create one. For this you can invoke _storjshare create_ with the following command:
 
     sudo docker-compose run daemon storjshare create .....
 
@@ -42,7 +46,7 @@ And specify the parameters of the create command to create the configuration fil
           -o, --outfile <writepath>  write config to path
           -h, --help                 output usage information
 
-If you already have a configuration file then you can skip this step and put your configuration file on the _/config_ directory, there's where the _run.sh_ startup script will look into for _config.json_.
+If you already have a configuration file then you can skip this step and put your configuration file on the _/config_ directory, there's where the _run.sh_ startup script will look into for _config.json_ by default. If you are going to use a different location for the configuration file you need to set STORJ_CONFIG_FILE pointing to the new directory.
 
 The _docker-compose.yml_ configuration file defines the following volumes that needs to be adjusted according to your setup (specially the data directory):
 
