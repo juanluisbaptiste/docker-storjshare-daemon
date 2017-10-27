@@ -6,14 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: storjshare-daemon
-#    tty: yes
     volumes_from:
       - daemon-data
     environment:
       - STORJ_CONFIG_FILE="/config/config.json"
-      # - STORJ_LOG_FILE="/log/storjshare.log"
-      # - STORJ_DATA_DIR="/rented"
-      # - STORJ_MAX_SIZE="1TB"
   daemon-data:
     image: juanluisbaptiste/storjshare-daemon:latest
     container_name: daemon-data

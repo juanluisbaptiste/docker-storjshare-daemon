@@ -1,6 +1,4 @@
 #!/bin/bash
-env
-set -x
 #Strip double quotes if added on env var
 STORJ_CONFIG_FILE="${STORJ_CONFIG_FILE%\"}"
 STORJ_CONFIG_FILE="${STORJ_CONFIG_FILE#\"}"
@@ -17,7 +15,7 @@ if [ -f ${STORJ_CONFIG_FILE} ];then
   #remove quotes
   storj_log_dir="${storj_log_dir%\"}"
   storj_log_dir="${storj_log_dir#\"}"
-  
+
   #Get nodeID from the logs name.
   node_id=$(ls ${storj_log_dir}/*.log|cut -d'_' -f1|uniq)
   node_id=$(basename ${node_id})
