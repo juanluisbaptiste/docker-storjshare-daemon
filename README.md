@@ -1,6 +1,6 @@
 # storjshare-daemon docker image
 
-Unofficial Storjshare Daemon + CLI for farming data on the Storj network.
+Unofficial Storjshare Daemon + CLI for farming data on the [Storj](https://storj.io/) network.
 
 
 ## How to build the image
