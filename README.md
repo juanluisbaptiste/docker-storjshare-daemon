@@ -21,8 +21,7 @@ If you don't have a configuration file for the daemon you will need to create on
     sudo docker-compose run daemon storjshare create .....
 
 And specify the parameters of the create command to create the configuration file:
-    Starting daemon-data
-
+  
         Usage: storjshare-create [options]
 
         generates a new share configuration
